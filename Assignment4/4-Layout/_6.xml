@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!-- White Space -->
+    <View
+        android:id="@+id/whiteSpace"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffffff"
+        android:layout_alignParentTop="true"/>
+
+    <!-- First View -->
+    <View
+        android:id="@+id/firstView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#000000"
+        android:layout_below="@id/whiteSpace"/>
+
+    <!-- Second View -->
+    <RelativeLayout
+        android:id="@+id/secondView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/firstView">
+
+        <View
+            android:id="@+id/secondViewLeft"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="#000000" />
+
+        <View
+            android:id="@+id/secondViewRight"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:background="#000000" />
+    </RelativeLayout>
+
+    <!-- Third View -->
+    <RelativeLayout
+        android:id="@+id/thirdView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/secondView">
+
+        <View
+            android:id="@+id/thirdViewTop"
+            android:layout_width="50dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:background="#000000" />
+
+        <View
+            android:id="@+id/thirdViewMiddle"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/thirdViewTop"
+            android:layout_marginTop="20dp"
+            android:background="#000000" />
+
+        <View
+            android:id="@+id/thirdViewBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/thirdViewMiddle"
+            android:background="#000000" />
+    </RelativeLayout>
+
+</RelativeLayout>
