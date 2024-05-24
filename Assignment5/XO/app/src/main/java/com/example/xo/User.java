@@ -1,4 +1,4 @@
-package com.example.login_sign;
+package com.example.xo;
 
 public class User {
     private String username;

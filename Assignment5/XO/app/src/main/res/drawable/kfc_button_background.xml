@@ -3,13 +3,13 @@
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="#FF5C00" /> <!-- KFC orange color when pressed -->
+            <solid android:color="#000000" /> <!-- KFC orange color when pressed -->
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="#FFA200" /> <!-- KFC orange color -->
+            <solid android:color="#B48DFB" /> <!-- KFC orange color -->
         </shape>
     </item>
 </selector>

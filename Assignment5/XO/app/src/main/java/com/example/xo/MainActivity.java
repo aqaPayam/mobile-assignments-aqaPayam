@@ -1,7 +1,9 @@
-package com.example.login_sign;
+package com.example.xo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewForgotPassword = findViewById(R.id.textViewForgotPassword);
         textViewRegister = findViewById(R.id.textViewRegister);
+        User newUser = new User("1", "1", "1");
+        registeredUsers.add(newUser);
 
         // Set click listener for login button
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         if (isValidCredentials(username, password)) {
             // Successful login
             Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Calc.class);
+            Intent intent = new Intent(MainActivity.this, SplashActivity.class);
             startActivity(intent);
 
             finish();
@@ -106,4 +112,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
+
 }
+

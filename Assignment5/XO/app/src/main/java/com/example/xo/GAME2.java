@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Stack;
 
-public class GAME extends AppCompatActivity implements View.OnClickListener {
+public class GAME2 extends AppCompatActivity implements View.OnClickListener {
 
     private final Button[][] buttons = new Button[3][3];
     private boolean player1Turn = true;
@@ -72,9 +72,9 @@ public class GAME extends AppCompatActivity implements View.OnClickListener {
         }
 
         if (player1Turn) {
-            clickedButton.setText("X");
-        } else {
             clickedButton.setText("O");
+        } else {
+            clickedButton.setText("X");
         }
 
         roundCount++;
@@ -105,10 +105,10 @@ public class GAME extends AppCompatActivity implements View.OnClickListener {
 
             // Check if the game ended with this move
             if (gameEnded) {
-                if (lastWinnerPlayer1 && lastMove.equals("X")) {
+                if (lastWinnerPlayer1 && lastMove.equals("O")) {
                     // Decrement Player 1's score if Player 1 won the last game
                     player1Points--;
-                } else if (lastWinnerPlayer2 && lastMove.equals("O")) {
+                } else if (lastWinnerPlayer2 && lastMove.equals("X")) {
                     // Decrement Player 2's score if Player 2 won the last game
                     player2Points--;
                 }
@@ -134,24 +134,24 @@ public class GAME extends AppCompatActivity implements View.OnClickListener {
         // Check rows, columns, and diagonals for a win
         for (int i = 0; i < 3; i++) {
             if (field[i][0].equals(field[i][1]) && field[i][0].equals(field[i][2]) && !field[i][0].isEmpty()) {
-                lastWinnerPlayer1 = field[i][0].equals("X");
-                lastWinnerPlayer2 = field[i][0].equals("O");
+                lastWinnerPlayer1 = field[i][0].equals("O");
+                lastWinnerPlayer2 = field[i][0].equals("X");
                 return true; // Row win
             }
             if (field[0][i].equals(field[1][i]) && field[0][i].equals(field[2][i]) && !field[0][i].isEmpty()) {
-                lastWinnerPlayer1 = field[0][i].equals("X");
-                lastWinnerPlayer2 = field[0][i].equals("O");
+                lastWinnerPlayer1 = field[0][i].equals("O");
+                lastWinnerPlayer2 = field[0][i].equals("X");
                 return true; // Column win
             }
         }
         if (field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !field[0][0].isEmpty()) {
-            lastWinnerPlayer1 = field[0][0].equals("X");
-            lastWinnerPlayer2 = field[0][0].equals("O");
+            lastWinnerPlayer1 = field[0][0].equals("O");
+            lastWinnerPlayer2 = field[0][0].equals("X");
             return true; // Diagonal win
         }
         if (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].isEmpty()) {
-            lastWinnerPlayer1 = field[0][2].equals("X");
-            lastWinnerPlayer2 = field[0][2].equals("O");
+            lastWinnerPlayer1 = field[0][2].equals("O");
+            lastWinnerPlayer2 = field[0][2].equals("X");
             return true; // Diagonal win
         }
 

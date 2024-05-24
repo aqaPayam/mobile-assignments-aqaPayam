@@ -1,13 +1,12 @@
+package com.example.xo;
+
 public class TicTacToe {
 
     // Assuming field is a 2D array of Strings representing the board state
-    private void cpumove(String[][] field) {
-        int[] bestMove = findBestMove(field);
-        int bestRow = bestMove[0];
-        int bestCol = bestMove[1];
+    public int[] move(String[][] field) {
 
-        // Perform the move (assuming O is the AI's mark)
-        field[bestRow][bestCol] = "O";
+        return findBestMove(field);
+
     }
 
     private int[] findBestMove(String[][] board) {
@@ -121,3 +120,5 @@ public class TicTacToe {
         return 0;
     }
 }
+
+
