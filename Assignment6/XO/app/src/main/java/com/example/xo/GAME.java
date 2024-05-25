@@ -23,10 +23,31 @@ public class GAME extends AppCompatActivity implements View.OnClickListener {
     private boolean lastWinnerPlayer2;
     private final Stack<Button> moveStack = new Stack<>();
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
+
+
+        // Find the Save and Load buttons and set their onClick listeners
+        Button saveButton = findViewById(R.id.saveButton);
+        Button loadButton = findViewById(R.id.loadButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveGame();
+            }
+        });
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadGame();
+            }
+        });
+
 
         // Find and set onClickListener for each button
         for (int i = 0; i < 3; i++) {
@@ -213,4 +234,18 @@ public class GAME extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(this, "Finish the current game before starting a new one!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void saveGame() {
+      //TODO
+        Toast.makeText(this, "Game saved!", Toast.LENGTH_SHORT).show();
+    }
+
+    // Implement the loadGame() method
+    private void loadGame() {
+       //TODO
+        Toast.makeText(this, "Game loaded!", Toast.LENGTH_SHORT).show();
+    }
+
+
+
 }
