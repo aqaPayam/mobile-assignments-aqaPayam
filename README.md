@@ -1,19 +1,112 @@
+
 # Mobile Assignments
 
-### Student Name: Payam Taebi
+This repository contains various mobile assignments, including a Tic-Tac-Toe (XO) game and a Calculator application developed for Android.
 
-### Student Code: 400104867
+## Repository URL
 
-# Notes: 
+[https://github.com/aqaPayam/mobile-assignments-aqaPayam](https://github.com/aqaPayam/mobile-assignments-aqaPayam)
 
-+  For each assignment that requires implementation, create a folder specifically for that assignment in your repository. Name the folder appropriately to reflect the assignment topic or number for easy identification.
+## Projects
 
+### XO Game
 
-+ Any **unusual similarity** in codes will be dealt with according to the course policy. Consulting and brainstorming in solving questions is positive and recommended, but <u>sharing codes with each other and cheating in all exercise questions is strictly unacceptable and prohibited.</u> Instances of academic dishonesty will be taken seriously, and measures may include grade penalties, failing the course, or further disciplinary action.
+This project is a Tic-Tac-Toe (XO) game developed for Android.
 
-+ In case of any problems, you can be in contact with the **TA**s:
-    + Quera: https://quera.org/course/17000/
-    + Feel free to raise issues or questions directly in the GitHub repository under the "Issues" section. Please tag the appropriate TA for visibility.
+#### Project Structure
 
+- `.gitignore`: Specifies files and directories that should be ignored by Git.
+- `.idea`: IDE-specific settings and configuration.
+- `app`: Contains the main application code and resources.
+  - `build.gradle.kts`: Gradle build script for the app module.
+  - `proguard-rules.pro`: ProGuard configuration file.
+  - `src`: Source code and resources for the application.
+    - `androidTest`: Instrumented tests for Android.
+    - `main`: Main application code and resources.
+      - `AndroidManifest.xml`: Application manifest file.
+      - `java/com/example/xo`: Java source files.
+        - `ForgetPasswordActivity.java`: Activity for handling password recovery.
+        - `GAME.java`, `GAME2.java`, `GAMECPU.java`, `GAMECPU2.java`: Game logic and activities.
+    - `test`: Unit tests for the application.
 
-We wish you success in this course and look forward to seeing your innovative solutions and learning together. Remember, the journey is as important as the destination. Keep experimenting, keep learning, and don't hesitate to reach out for help when you need it. :)
+#### Getting Started
+
+##### Prerequisites
+
+- Android Studio
+- Java Development Kit (JDK)
+- Android SDK
+
+##### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/aqaPayam/mobile-assignments-aqaPayam
+    ```
+2. Open the `XO` project in Android Studio.
+3. Build the project:
+    ```sh
+    ./gradlew build
+    ```
+4. Run the project on an Android emulator or device.
+
+#### Usage
+
+- The application provides multiple game modes including single-player and two-player modes.
+- Navigate through different activities to play the game and manage user accounts.
+
+#### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Calculator App
+
+This project is a simple calculator application developed for Android.
+
+#### Project Structure
+
+- `.gitignore`: Specifies files and directories that should be ignored by Git.
+- `.idea`: IDE-specific settings and configuration.
+- `app`: Contains the main application code and resources.
+  - `build.gradle.kts`: Gradle build script for the app module.
+  - `proguard-rules.pro`: ProGuard configuration file.
+  - `src`: Source code and resources for the application.
+    - `androidTest`: Instrumented tests for Android.
+    - `main`: Main application code and resources.
+      - `AndroidManifest.xml`: Application manifest file.
+      - `java/com/example/login_sign`: Java source files.
+        - `Calc.java`: Main activity for the calculator functionality.
+      - `res`: Application resources such as layouts and drawable assets.
+        - `drawable`: Drawable resources.
+        - `layout`: Layout XML files.
+          - `calc.xml`: Layout for the calculator interface.
+    - `test`: Unit tests for the application.
+
+#### Getting Started
+
+##### Prerequisites
+
+- Android Studio
+- Java Development Kit (JDK)
+- Android SDK
+
+##### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/aqaPayam/mobile-assignments-aqaPayam
+    ```
+2. Open the `CALCULATOR` project in Android Studio.
+3. Build the project:
+    ```sh
+    ./gradlew build
+    ```
+4. Run the project on an Android emulator or device.
+
+#### Usage
+
+- The application provides basic calculator functionality with a user-friendly interface.
+
+#### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

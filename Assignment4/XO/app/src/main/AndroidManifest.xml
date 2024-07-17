@@ -21,6 +21,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- ForgetPasswordActivity -->
+        <activity android:name=".ForgetPasswordActivity" />
+
+        <activity android:name=".MenuActivity" />
+
+        <!-- SignUpActivity -->
+        <activity android:name=".SignUpActivity" />
+        <!-- Calc Activity -->
+        <activity android:name=".GAME" />
+
+        <activity android:name=".GAMECPU" />
+
+        <activity android:name=".GAMECPU2" />
+
+        <activity android:name=".GAME2" />
+
+        <activity android:name=".SplashActivity" />
+
+
     </application>
 
 </manifest>

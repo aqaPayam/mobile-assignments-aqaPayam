@@ -1,6 +1,7 @@
 package com.example.xo;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,22 @@ public class GAMECPU2 extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
+
+        // Find the Save and Load buttons and set their onClick listeners
+        Button saveButton = findViewById(R.id.saveButton);
+        Button loadButton = findViewById(R.id.loadButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveGame();
+            }
+        });
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadGame();
+            }
+        });
 
         // Find and set onClickListener for each button
         for (int i = 0; i < 3; i++) {
@@ -254,4 +271,84 @@ public class GAMECPU2 extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(this, "Finish the current game before starting a new one!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void saveGame() {
+        SharedPreferences sharedPreferences = getSharedPreferences("TicTacToeGame4", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // Save each button state
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                editor.putString("button_" + i + "_" + j, buttons[i][j].getText().toString());
+            }
+        }
+
+        // Save the game state
+        editor.putBoolean("player1Turn", player1Turn);
+        editor.putInt("roundCount", roundCount);
+        editor.putInt("player1Points", player1Points);
+        editor.putInt("player2Points", player2Points);
+        editor.putBoolean("gameEnded", gameEnded);
+        editor.putBoolean("lastWinnerPlayer1", lastWinnerPlayer1);
+        editor.putBoolean("lastWinnerPlayer2", lastWinnerPlayer2);
+
+        // Save the move stack size
+        editor.putInt("moveStackSize", moveStack.size());
+
+        // Save each move in the stack
+        for (int i = 0; i < moveStack.size(); i++) {
+            Button button = moveStack.get(i);
+            int id = button.getId();
+            editor.putInt("moveStack_" + i, id);
+        }
+
+        editor.apply();
+        Toast.makeText(this, "Game Saved!", Toast.LENGTH_SHORT).show();
+    }
+
+    private void loadGame() {
+        SharedPreferences sharedPreferences = getSharedPreferences("TicTacToeGame4", MODE_PRIVATE);
+
+        // Check if the saved game exists
+        boolean hasSavedGame = sharedPreferences.contains("player1Turn");
+
+        if (hasSavedGame) {
+            // Load each button state
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    String buttonText = sharedPreferences.getString("button_" + i + "_" + j, "");
+                    buttons[i][j].setText(buttonText);
+                }
+            }
+
+            // Load the game state
+            player1Turn = sharedPreferences.getBoolean("player1Turn", true);
+            roundCount = sharedPreferences.getInt("roundCount", 0);
+            player1Points = sharedPreferences.getInt("player1Points", 0);
+            player2Points = sharedPreferences.getInt("player2Points", 0);
+            gameEnded = sharedPreferences.getBoolean("gameEnded", false);
+            lastWinnerPlayer1 = sharedPreferences.getBoolean("lastWinnerPlayer1", false);
+            lastWinnerPlayer2 = sharedPreferences.getBoolean("lastWinnerPlayer2", false);
+
+            // Load the move stack
+            int moveStackSize = sharedPreferences.getInt("moveStackSize", 0);
+            moveStack.clear();
+            for (int i = 0; i < moveStackSize; i++) {
+                int buttonId = sharedPreferences.getInt("moveStack_" + i, -1);
+                if (buttonId != -1) {
+                    Button button = findViewById(buttonId);
+                    moveStack.push(button);
+                }
+            }
+
+            updatePointsText();
+            Toast.makeText(this, "Game Loaded!", Toast.LENGTH_SHORT).show();
+        } else {
+            // No saved game found, initialize to default values
+            resetBoard();
+            Toast.makeText(this, "No saved game found. Starting new game!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 }

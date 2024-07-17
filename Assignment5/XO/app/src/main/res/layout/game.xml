@@ -4,6 +4,34 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
+
+    <!-- Save Button -->
+
+
+    <Button
+        android:id="@+id/loadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        android:background="#4CAF50"
+        android:onClick="loadGame"
+        android:text="Load"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadButton"
+        android:layout_marginTop="13dp"
+        android:background="#4CAF50"
+        android:onClick="saveGame"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

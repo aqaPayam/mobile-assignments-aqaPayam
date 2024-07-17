@@ -1,232 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="#000000">
+    android:padding="16dp"
+    android:background="@drawable/kfc_button_background">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="259dp"
+        android:layout_height="256dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/kfc" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tic-Tac-Toe"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        android:hint="Username"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:inputType="text"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/textViewPlayer1"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player 1: 0"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:id="@+id/textViewPlayer2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Player 2: 0"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"/>
-
-
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:rowCount="3"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:background="#212121">
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            android:onClick="onButtonClick"
-            android:background="#303030"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginStart="2dp"/>
-
-    </GridLayout>
+        android:hint="Password"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:inputType="textPassword"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="16dp"/>
 
     <Button
-        android:id="@+id/newGameButton"
+        android:id="@+id/buttonLogin"
+        android:background="#FFA200"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/textViewForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Game"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:onClick="newGame"
-        android:layout_marginTop="20dp"
-        android:background="#4CAF50"/>
+        android:text="Forgot Password?"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonLogin"
+        android:layout_marginTop="16dp"
+        android:onClick="navigateToForgetPassword"/>
 
-
-    <Button
-        android:id="@+id/undoButton"
+    <TextView
+        android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Undo"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:onClick="undoMove"
-        android:layout_marginTop="20dp"
-        android:background="#4CAF50"/>
+        android:text="Don't have an account? Register"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textViewForgotPassword"
+        android:layout_marginTop="16dp"
+        android:onClick="navigateToSignUp"/>
 
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="#4CAF50"
-        android:onClick="resetGame"
-        android:text="Reset"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp" />
-
-
-</LinearLayout>
-
-
-
+</RelativeLayout>
